@@ -2,3 +2,29 @@
 封装了Ajax操作的简易工具
 
 这里采用单例模式封装成一个对象，即只有一个全局的变量将其赋值给Ajax，该对象有一个request方法。request有两个参数，第一个为请求的url(必要的)，字符串类型，第二个opt为配置参数(可选的)，对象类型。
+
+目前提供的api：
+`Ajax.request(url,option)`
+```javascript
+      Ajax.request('http://localhost:3006/postData',{
+          data:data,
+          method:'post',
+          async:false,
+          success:function(data){
+              console.log(data);
+          }
+      })
+```
+`Ajax.formToHash(form)`:
+用于将form表单转化为hash对象
+```javascript
+  Ajax.formToHash(xy)
+  Object {name: "xy", sex: "male", select: Array[1]}
+```
+
+`Ajax.serialize(obj)`:
+将数据对象字符串化为请求参数
+```javascript
+  Ajax.serialize(Ajax.formToHash(xy))
+  "name=xy&sex=male&select=peer"
+```
