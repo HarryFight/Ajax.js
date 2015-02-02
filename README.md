@@ -5,6 +5,14 @@
 
 目前提供的api：
 `Ajax.request(url,option)`
+`
+var async = opt.async !== false,   //默认为true，为异步
+          method = opt.method || 'GET',
+          data = opt.data || null,
+          encode = opt.encode || 'utf-8',   //设置请求头编码
+          success = opt.success || fn,
+          failure = opt.failure || fn;
+`
 ```javascript
       Ajax.request('http://localhost:3006/postData',{
           data:data,
