@@ -7,6 +7,7 @@
 
 `Ajax.request(url,option)`
 
+默认参数：
 ```javascript
 var async = opt.async !== false,   //默认为true，为异步
           method = opt.method || 'GET',
