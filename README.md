@@ -6,6 +6,8 @@
 目前提供的api：
 
 `Ajax.request(url,option)`
+`Ajax.get(url,data,callback)` 参数`data`,可缺省。
+`Ajax.post(url,data,callback)` 参数`data`,可缺省。
 
 默认参数：
 ```javascript
@@ -24,6 +26,14 @@ var async = opt.async !== false,   //默认为true，为异步
           success:function(data){
               console.log(data);
           }
+      })
+      
+      Ajax.get('./getHtml',function(d){
+           console.log(d)
+      })
+      
+      Ajax.post('./getHtml',data,function(d){
+           console.log(d)
       })
 ```
 `Ajax.formToHash(form)`:
