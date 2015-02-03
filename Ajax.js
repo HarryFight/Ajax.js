@@ -47,7 +47,42 @@
         //返回xhr对象
         return xhr;
     };
-
+    Ajax.get = function(url){
+        var xhr;
+       if(arguments.length >2){
+           //带data数据的请求
+           xhr = Ajax.request(url,{
+               data:arguments[1],
+               success:arguments[2]
+           });
+           return xhr;
+       }else{
+           //不带数据的请求
+           xhr = Ajax.request(url,{
+               success:arguments[1]
+           });
+           return xhr;
+       }
+    };
+    Ajax.post = function(url){
+        var xhr;
+        if(arguments.length >2){
+            //带data数据的请求
+            xhr = Ajax.request(url,{
+                method:'post',
+                data:arguments[1],
+                success:arguments[2]
+            });
+            return xhr;
+        }else{
+            //不带数据的请求
+            xhr = Ajax.request(url,{
+                method:'post',
+                success:arguments[1]
+            });
+            return xhr;
+        }
+    };
     //工具方法
     /**
      * 将form表单转化为hash对象
