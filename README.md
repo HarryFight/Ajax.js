@@ -6,7 +6,9 @@
 目前提供的api：
 
 `Ajax.request(url,option)`
+
 `Ajax.get(url,data,callback)` 参数`data`,可缺省。
+
 `Ajax.post(url,data,callback)` 参数`data`,可缺省。
 
 默认参数：
